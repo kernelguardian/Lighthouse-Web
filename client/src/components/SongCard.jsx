@@ -68,11 +68,11 @@ export default function SongCard({ song }) {
   };
 
   return (
-    <Card className="hover:shadow-md transition-shadow duration-200">
+    <Card className="hover:shadow-md transition-shadow duration-200 dark:bg-gray-800 dark:border-gray-700">
       <CardContent className="p-6">
         <div className="flex items-start justify-between">
           <div className="min-w-0 flex-1">
-            <h3 className="text-lg font-semibold text-gray-900 truncate">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white truncate">
               <Link 
                 href={`/song/${song.id}`} 
                 className="hover:text-lighthouse-600"
@@ -80,17 +80,17 @@ export default function SongCard({ song }) {
                 {song.title}
               </Link>
             </h3>
-            <p className="text-sm text-gray-500 mt-1">{song.artist}</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{song.artist}</p>
             <div className="flex items-center mt-2 space-x-2">
               <Badge className={languageColors[song.primaryLanguage] || "bg-gray-100 text-gray-800"}>
                 {song.primaryLanguage}
               </Badge>
               <span className="text-gray-400">•</span>
-              <span className="text-xs text-gray-500">{song.viewCount || 0} views</span>
+              <span className="text-xs text-gray-500 dark:text-gray-400">{song.viewCount || 0} views</span>
             </div>
           </div>
           <button 
-            className="ml-4 p-2 text-gray-400 hover:text-red-500" 
+            className="ml-4 p-2 text-gray-400 dark:text-gray-500 hover:text-red-500" 
             onClick={handleFavoriteClick}
             disabled={favoriteMutation.isPending}
             title="Add to favorites"

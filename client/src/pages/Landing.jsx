@@ -92,12 +92,12 @@ export default function Landing() {
           {loadingPopular ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(5)].map((_, i) => (
-                <div key={i} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <div key={i} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
                   <div className="animate-pulse">
-                    <div className="h-6 bg-gray-200 rounded mb-2"></div>
-                    <div className="h-4 bg-gray-200 rounded mb-4 w-3/4"></div>
-                    <div className="h-4 bg-gray-200 rounded mb-2"></div>
-                    <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                    <div className="h-6 bg-gray-200 dark:bg-gray-600 rounded mb-2"></div>
+                    <div className="h-4 bg-gray-200 dark:bg-gray-600 rounded mb-4 w-3/4"></div>
+                    <div className="h-4 bg-gray-200 dark:bg-gray-600 rounded mb-2"></div>
+                    <div className="h-4 bg-gray-200 dark:bg-gray-600 rounded w-1/2"></div>
                   </div>
                 </div>
               ))}
@@ -113,30 +113,30 @@ export default function Landing() {
 
         {/* Recent Activity Section */}
         <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Recent Activity</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Recent Activity</h2>
           
-          <Card>
+          <Card className="dark:bg-gray-800 dark:border-gray-700">
             <CardContent className="p-0">
               {loadingActivity ? (
-                <div className="divide-y divide-gray-200">
+                <div className="divide-y divide-gray-200 dark:divide-gray-700">
                   {[...Array(5)].map((_, i) => (
                     <div key={i} className="p-6">
                       <div className="animate-pulse flex items-center space-x-4">
-                        <div className="h-10 w-10 bg-gray-200 rounded-full"></div>
+                        <div className="h-10 w-10 bg-gray-200 dark:bg-gray-600 rounded-full"></div>
                         <div className="flex-1">
-                          <div className="h-4 bg-gray-200 rounded mb-2"></div>
-                          <div className="h-3 bg-gray-200 rounded w-1/4"></div>
+                          <div className="h-4 bg-gray-200 dark:bg-gray-600 rounded mb-2"></div>
+                          <div className="h-3 bg-gray-200 dark:bg-gray-600 rounded w-1/4"></div>
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
               ) : recentActivity.length === 0 ? (
-                <div className="p-6 text-center text-gray-500">
+                <div className="p-6 text-center text-gray-500 dark:text-gray-400">
                   No recent activity to display.
                 </div>
               ) : (
-                <div className="divide-y divide-gray-200">
+                <div className="divide-y divide-gray-200 dark:divide-gray-700">
                   {recentActivity.map((activity, index) => (
                     <div key={index} className="p-6 hover:bg-gray-50">
                       <div className="flex items-center space-x-4">

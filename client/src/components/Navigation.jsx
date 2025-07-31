@@ -1,20 +1,12 @@
-import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { Link, useLocation } from "wouter";
-import SearchBar from "./SearchBar";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { useTheme } from "@/hooks/useTheme";
 
 export default function Navigation() {
   const { user, isAuthenticated, isLoading } = useAuth();
-  const [, setLocation] = useLocation();
-  const [showMobileSearch, setShowMobileSearch] = useState(false);
-
-  const handleSearch = (query) => {
-    if (query.trim()) {
-      setLocation(`/search?q=${encodeURIComponent(query)}`);
-    }
-  };
+  const { theme, toggleTheme } = useTheme();
 
   const handleSignIn = () => {
     window.location.href = "/api/login";
@@ -25,35 +17,28 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <nav className="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo and Brand */}
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
               <i className="fas fa-lighthouse text-lighthouse-600 text-2xl mr-3"></i>
-              <div className="text-xl font-bold text-lighthouse-900">Lighthouse Lyrics</div>
+              <div className="text-xl font-bold text-lighthouse-900 dark:text-white">Lighthouse Lyrics</div>
             </Link>
           </div>
 
-          {/* Desktop Search Bar */}
-          <div className="hidden md:flex flex-1 max-w-2xl mx-8">
-            <SearchBar
-              placeholder="Search Christian songs, artists, or lyrics..."
-              onSearch={handleSearch}
-              className="w-full"
-              showIcon={true}
-            />
-          </div>
+
 
           {/* User Menu */}
           <div className="flex items-center space-x-4">
-            {/* Mobile Search Toggle */}
-            <button 
-              className="md:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100"
-              onClick={() => setShowMobileSearch(!showMobileSearch)}
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-md text-gray-400 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
+              title={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
             >
-              <i className="fas fa-search"></i>
+              <i className={`fas ${theme === "light" ? "fa-moon" : "fa-sun"}`}></i>
             </button>
 
             {!isLoading && (
@@ -108,38 +93,19 @@ export default function Navigation() {
                     </DropdownMenu>
                   </div>
                 ) : (
-                  <div className="flex items-center space-x-3">
-                    <Button
-                      variant="ghost"
-                      onClick={handleSignIn}
-                      className="text-gray-500 hover:text-gray-700"
-                    >
-                      Sign In
-                    </Button>
-                    <Button
-                      onClick={handleSignIn}
-                      className="bg-lighthouse-600 hover:bg-lighthouse-700"
-                    >
-                      Sign Up
-                    </Button>
-                  </div>
+                  <Button
+                    onClick={handleSignIn}
+                    className="bg-lighthouse-600 hover:bg-lighthouse-700"
+                  >
+                    Sign In
+                  </Button>
                 )}
               </>
             )}
           </div>
         </div>
 
-        {/* Mobile Search Bar */}
-        {showMobileSearch && (
-          <div className="md:hidden pb-4">
-            <SearchBar
-              placeholder="Search Christian songs, artists, or lyrics..."
-              onSearch={handleSearch}
-              className="w-full"
-              showIcon={true}
-            />
-          </div>
-        )}
+
       </div>
     </nav>
   );

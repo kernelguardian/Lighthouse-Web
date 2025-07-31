@@ -39,7 +39,7 @@ export default function Navigation() {
           {/* Desktop Search Bar */}
           <div className="hidden md:flex flex-1 max-w-2xl mx-8">
             <SearchBar
-              placeholder="Search songs, artists, or lyrics..."
+              placeholder="Search Christian songs, artists, or lyrics..."
               onSearch={handleSearch}
               className="w-full"
               showIcon={true}
@@ -133,7 +133,7 @@ export default function Navigation() {
         {showMobileSearch && (
           <div className="md:hidden pb-4">
             <SearchBar
-              placeholder="Search songs, artists, or lyrics..."
+              placeholder="Search Christian songs, artists, or lyrics..."
               onSearch={handleSearch}
               className="w-full"
               showIcon={true}

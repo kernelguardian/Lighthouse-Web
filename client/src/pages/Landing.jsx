@@ -58,7 +58,7 @@ export default function Landing() {
             {/* Featured Search */}
             <div className="mt-10 max-w-xl mx-auto">
               <SearchBar
-                placeholder="Try searching for 'Amazing Grace' or 'How Great Thou Art'..."
+                placeholder="Search Christian songs like 'Amazing Grace' or 'Way Maker'..."
                 onSearch={handleSearch}
                 className="text-lg py-4 pl-12 pr-4 rounded-xl shadow-lg"
                 showIcon={true}

@@ -49,7 +49,7 @@ export default function Home() {
           </p>
           <div className="max-w-xl mx-auto">
             <SearchBar
-              placeholder="Search songs, artists, or lyrics..."
+              placeholder="Search Christian songs, artists, or lyrics..."
               onSearch={handleSearch}
               className="text-base py-3 pl-10 pr-4 rounded-lg"
               showIcon={true}
@@ -63,7 +63,7 @@ export default function Home() {
             <CardContent className="p-2">
               <i className="fas fa-plus-circle text-lighthouse-600 text-2xl mb-2"></i>
               <h3 className="font-semibold text-gray-900 mb-1">Add New Song</h3>
-              <p className="text-sm text-gray-500 mb-3">Contribute to the database</p>
+              <p className="text-sm text-gray-500 mb-3">Contribute Christian songs</p>
               <Button size="sm" className="bg-lighthouse-600 hover:bg-lighthouse-700">
                 Add Song
               </Button>
@@ -74,7 +74,7 @@ export default function Home() {
             <CardContent className="p-2">
               <i className="fas fa-language text-lighthouse-600 text-2xl mb-2"></i>
               <h3 className="font-semibold text-gray-900 mb-1">Add Translation</h3>
-              <p className="text-sm text-gray-500 mb-3">Help translate lyrics</p>
+              <p className="text-sm text-gray-500 mb-3">Help translate worship songs</p>
               <Button size="sm" variant="outline">
                 Browse Songs
               </Button>

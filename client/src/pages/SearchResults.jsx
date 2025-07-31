@@ -40,7 +40,7 @@ export default function SearchResults() {
         <div className="mb-8">
           <div className="max-w-2xl mx-auto mb-6">
             <SearchBar
-              placeholder="Search songs, artists, or lyrics..."
+              placeholder="Search Christian songs, artists, or lyrics..."
               initialValue={searchQuery}
               onSearch={handleSearch}
               className="text-base py-3 pl-10 pr-4 rounded-lg"
@@ -108,7 +108,7 @@ export default function SearchResults() {
                 Search for Songs
               </h2>
               <p className="text-gray-500">
-                Enter a song title, artist name, or lyrics to start searching.
+                Enter a Christian song title, artist name, or lyrics to start searching.
               </p>
             </CardContent>
           </Card>

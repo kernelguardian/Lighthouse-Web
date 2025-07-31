@@ -11,8 +11,8 @@ export default function Footer() {
               <div className="text-xl font-bold text-lighthouse-900">Lighthouse Lyrics</div>
             </div>
             <p className="mt-4 text-gray-500 max-w-md">
-              Building the world's most comprehensive multilingual lyrics database. 
-              Discover, contribute, and preserve musical heritage across cultures.
+              Building the world's most comprehensive multilingual Christian songs database. 
+              Discover, contribute, and preserve worship music and hymns across cultures.
             </p>
           </div>
           

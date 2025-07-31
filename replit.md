@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a full-stack web application built with React, Express, and PostgreSQL for managing song lyrics. The application follows a modern monorepo structure with shared TypeScript schemas and uses shadcn/ui for the frontend components. It integrates with Replit's authentication system and uses Drizzle ORM for database operations.
+This is a full-stack web application built with React, Express, and PostgreSQL specifically for managing Christian song lyrics. The application follows a modern monorepo structure with shared TypeScript schemas and uses shadcn/ui for the frontend components. It integrates with Replit's authentication system and uses Drizzle ORM for database operations. The platform focuses exclusively on Christian music including hymns, contemporary worship songs, gospel music, and praise songs.
 
 ## User Preferences
 

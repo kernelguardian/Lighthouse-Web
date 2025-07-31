@@ -48,17 +48,17 @@ export default function Landing() {
             <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
               <span className="block">Lighthouse Lyrics</span>
               <span className="block text-lighthouse-600 text-3xl sm:text-4xl md:text-5xl mt-2">
-                Song Database
+                Christian Songs Database
               </span>
             </h1>
             <p className="mt-6 text-xl text-gray-500 max-w-2xl mx-auto">
-              Discover and explore song lyrics in multiple languages. Search, contribute, and build the world's most comprehensive lyrics database.
+              Discover and explore Christian song lyrics in multiple languages. Search, contribute, and build a comprehensive database of worship songs, hymns, and contemporary Christian music.
             </p>
             
             {/* Featured Search */}
             <div className="mt-10 max-w-xl mx-auto">
               <SearchBar
-                placeholder="Try searching for 'Vande Mataram' or 'Imagine'..."
+                placeholder="Try searching for 'Amazing Grace' or 'How Great Thou Art'..."
                 onSearch={handleSearch}
                 className="text-lg py-4 pl-12 pr-4 rounded-xl shadow-lg"
                 showIcon={true}

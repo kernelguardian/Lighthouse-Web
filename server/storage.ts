@@ -255,7 +255,11 @@ export class DatabaseStorage implements IStorage {
 
     // Combine and sort by date
     const allActivity = [...recentSongs, ...recentLyrics, ...recentSuggestions]
-      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+      .sort((a, b) => {
+        const dateA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+        const dateB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+        return dateB - dateA;
+      })
       .slice(0, limit);
 
     return allActivity;

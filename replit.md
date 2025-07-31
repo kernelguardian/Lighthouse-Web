@@ -118,4 +118,32 @@ Preferred communication style: Simple, everyday language.
 - Migrations generated and applied via `drizzle-kit push`
 - PostgreSQL dialect with connection string configuration
 
-The application is designed to run seamlessly in Replit's environment while maintaining the flexibility to deploy elsewhere with minimal configuration changes.
+## Recent Changes
+
+### January 31, 2025
+- Removed top search bar from navigation for cleaner UI
+- Simplified authentication to single "Sign In" button in top right
+- Reduced to exactly 5 Christian songs with sample lyrics in database
+- Added night mode with theme toggle (moon/sun icon in navigation)
+- Updated all components (Landing, SongCard, Navigation, Footer) with dark mode support
+- Configured Vercel deployment with serverless functions and static build
+- Created proper build scripts and deployment configuration files
+
+## Deployment Strategy
+
+The application is designed to run seamlessly in Replit's environment while maintaining full Vercel deployment capability:
+
+### Vercel Deployment
+- Static build for React frontend via `vite build`
+- Serverless functions for API endpoints in `/api` directory
+- PostgreSQL database connection with environment variables
+- Proper CORS configuration for production
+- Build script handles client bundling and API preparation
+
+### Files for Deployment
+- `vercel.json` - Vercel configuration
+- `api/index.js` - Serverless function entry point
+- `build.sh` - Build script for deployment
+- `README.md` - Deployment instructions and environment variables
+
+The application maintains flexibility to deploy on Replit or Vercel with minimal configuration changes.
